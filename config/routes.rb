@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  root "pages#home"
+  get 'recipes/index'
+
+  root 'pages#home'
   get 'pages/home', to: 'pages#home'
+
+  get '/recipes', to: 'recipes#index'
 end
