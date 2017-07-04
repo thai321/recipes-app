@@ -13,7 +13,7 @@
 
           <div class="panel-body">
             <ul>
-              <%= @recipe.errors.full_messages.each do |msg| %>
+              <% @recipe.errors.full_messages.each do |msg| %>
               <li>
                 <%= msg %>
               </li>
