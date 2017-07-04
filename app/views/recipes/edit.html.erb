@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: "Create a new recipe" %>
+<%= render 'shared/page_title', title: "Edit a existing recipe" %>
 <%= render 'shared/errors', recipe: @recipe %>
 
 
@@ -27,7 +27,7 @@
 
       <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-          <%= f.submit 'Create', class: "btn btn-primary btn-lg btn-xlarge" %>
+          <%= f.submit 'Update', class: "btn btn-primary btn-lg btn-xlarge" %>
           <%= link_to "Cancel", recipes_path, class: "btn btn-danger btn-lg right" %>
         </div>
 
