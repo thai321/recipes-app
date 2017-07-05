@@ -58,5 +58,13 @@
     </div>
 
     <% end %>
+    <div class="center">
+      <%= link_to 'Delete', @chef,
+      class: "btn btn-danger btn-md",
+        method: :delete,
+        data: {confirm: "Are you sure you want to delete your account and all associated recipes?"}
+        %>
+    </div>
+
   </div>
 </div>

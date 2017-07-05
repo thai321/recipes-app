@@ -17,7 +17,7 @@
         </span>
       </p>
 
-      <% if logged_in? && current_chef == recipe.chef %>
+      <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
         <div class="recipe-action">
           <%= link_to 'Edit this recipe', edit_recipe_path(recipe), class: "btn btn-warning btn-xs" %>
 
