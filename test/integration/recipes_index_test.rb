@@ -27,6 +27,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test 'Should get recipes show' do
+    sign_in_as(@chef, "password") # from test_helper.rb
     get recipe_path(@recipe)
     assert_template 'recipes/show'
     assert_match @recipe.name.capitalize, response.body
@@ -39,6 +40,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
 
 
   test 'Create new valid recipe' do
+    sign_in_as(@chef, "password") # from test_helper.rb
     get new_recipe_path
     assert_template 'recipes/new'
     name_of_recipe = "chicken saute"
@@ -52,6 +54,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   end
 
   test 'reject invalid recipe submission' do
+    sign_in_as(@chef, "password")
     get new_recipe_path
     assert_template 'recipes/new'
     assert_no_difference 'Recipe.count' do
