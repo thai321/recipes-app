@@ -11,4 +11,6 @@ class Chef < ApplicationRecord
   has_many :recipes, dependent: :destroy
   has_secure_password # enforce the user to sign up with password
   validates :password, presence: true, length: { minimum: 5 }, allow_nil: true # allow the password field to be empty when update
+
+  has_many :comments, dependent: :destroy
 end
