@@ -59,7 +59,7 @@ class ChefsController < ApplicationController
     def require_same_user         # alow admin to access
       if current_chef != @chef and !current_chef.admin?
         flash[:danger] = "You can only edit or delete your own account"
-        redirect_to current_chef
+        redirect_to chefs_path
       end
     end
 
