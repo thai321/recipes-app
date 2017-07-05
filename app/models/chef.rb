@@ -9,6 +9,6 @@ class Chef < ApplicationRecord
                     uniqueness: { case_sensitive: false }
 
   has_many :recipes
-  has_secure_password
-  validates :password, presence: true, length: { minimum: 5 }
+  has_secure_password # enforce the user to sign up with password
+  validates :password, presence: true, length: { minimum: 5 }, allow_nil: true # allow the password field to be empty when update
 end

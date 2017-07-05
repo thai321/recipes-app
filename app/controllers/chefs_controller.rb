@@ -17,6 +17,21 @@ class ChefsController < ApplicationController
     @chef = Chef.find(params[:id])
   end
 
+  def edit
+    @chef = Chef.find(params[:id])
+  end
+
+  def update
+    @chef = Chef.find(params[:id])
+    if @chef.update(chef_params)
+      flash[:success] = "#{@chef.name}'s profile was updated successfully"
+      redirect_to @chef
+    else
+      render 'edit'
+    end
+
+  end
+
   private
   def chef_params
     params.require(:chef).permit(:name, :email, :password, :password_confirmation)
