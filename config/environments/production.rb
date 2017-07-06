@@ -91,6 +91,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # for Heroku ActionCable
-  config.web_socket_server_url = 'wss://thai-myrecipes.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = ['https://thai-myrecipes.herokuapp.com', 'http://thai-myrecipes.herokuapp.com/']
+  config.web_socket_server_url = "wss://thai-myrecipes.herokuapp.com/cable"
+
+  config.action_cable.allowed_request_origins = ['https://thai-myrecipes.herokuapp.com', 'http://thai-myrecipes.herokuapp.com']
 end
