@@ -18,6 +18,7 @@
           <small>
             Created <%= time_ago_in_words(recipe.created_at) %> ago
             by <%= recipe.chef.name.capitalize %>
+            | <%= pluralize(recipe.comments.count, 'Comment') %>
           </small>
         </span>
       </p>
