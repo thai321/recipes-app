@@ -11,4 +11,13 @@ module ApplicationHelper
     image_tag(gravatar_url, alt: name, class: "img-circle")
   end
 
+  def show_count_recipes model
+    show_count = ''
+    if model.recipes.count > 0
+      count = pluralize(model.recipes.count, 'recipe')
+      show_count = "<li><small>#{count}</small></li>"
+    end
+    show_count.html_safe
+  end
+
 end

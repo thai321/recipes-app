@@ -3,19 +3,23 @@
 <div class="row">
   <div class="center">
     <%= gravatar_for @chef, size: 150 %>
-    <h3><%= "#{@chef.name.capitalize}'s recipes" %></h3>
   </div>
 
 </div>
 
 
+<% if @chef.recipes.count > 0 %>
+  <h3 class="center"><%= "#{@chef.name.capitalize}'s recipes" %></h3>
 
-<div class="center">
-  <%= will_paginate @chef_recipes %>
-</div>
+  <div class="center">
+    <%= will_paginate @chef_recipes %>
+  </div>
 
-<%= render 'recipes/recipe', obj: @chef_recipes%>
+  <%= render 'recipes/recipe', obj: @chef_recipes%>
 
-<div class="center">
-  <%= will_paginate @chef_recipes %>
-</div>
+  <div class="center">
+    <%= will_paginate @chef_recipes %>
+  </div>
+<% else %>
+  <h4 class="center">No recipes yet!</h4>
+<% end %>

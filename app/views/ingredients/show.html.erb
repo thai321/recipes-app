@@ -1,0 +1,18 @@
+<%= render 'shared/page_title', title: "#{@ingredient.name.capitalize}" %>
+
+
+<% if @ingredient.recipes.count > 0 %>
+  <h3 class="center">Recipe's containing <%= "#{@ingredient.name.capitalize}" %></h3>
+
+  <div class="center">
+    <%= will_paginate @ingredient_recipes %>
+  </div>
+
+  <%= render 'recipes/recipe', obj: @ingredient_recipes%>
+
+  <div class="center">
+    <%= will_paginate @ingredient_recipes %>
+  </div>
+<% else %>
+  <h4 class="center">No recipes yet!</h4>
+<% end %>
